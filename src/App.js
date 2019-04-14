@@ -9,7 +9,8 @@ class App extends Component {
     this.state= {
       sessionLength: 25,
       breakLength: 5,
-      secondsLeft: 1499
+      minutes: 25,
+      seconds: 0
     }
 
   }
@@ -17,7 +18,7 @@ class App extends Component {
     return (
       <div className="App">
         <div id = "timer" className = "display">
-          <Timer timeLeft = {this.state.secondsLeft} />
+          <Timer minsLeft = {this.state.minutes} secsLeft = {this.state.seconds} />
         </div>
         <div id = "options" className = "display">
         </div>
