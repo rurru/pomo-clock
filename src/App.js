@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Timer from './Timer.js';
+import TimerLabel from './TimerLabel.js';
 
 class App extends Component {
   constructor(props){
@@ -10,7 +11,8 @@ class App extends Component {
       sessionLength: 25,
       breakLength: 5,
       minutes: 25,
-      seconds: 0
+      seconds: 0,
+      inSession: true
     }
 
   }
@@ -18,6 +20,7 @@ class App extends Component {
     return (
       <div className="App">
         <div id = "timer" className = "display">
+          <TimerLabel session = {this.state.inSession} />
           <Timer minsLeft = {this.state.minutes} secsLeft = {this.state.seconds} />
         </div>
         <div id = "options" className = "display">
