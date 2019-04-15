@@ -1,8 +1,15 @@
+
+#start_stop, #reset, #break-length, #session-length, .options {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 #time-left {
     opacity: 0.7;
 }
 
-#session-label, #break-label {
+#timer-label {
     font-size: 30px;
     text-align: center;
     opacity: 0.7;
@@ -15,9 +22,6 @@
     border-radius: 5px;
     border: 1px solid #fff;
     opacity: 0.7;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     z-index: 1000;
 }
 
@@ -34,4 +38,44 @@
 
 #start_stop {
     border: 1px solid #0f0;
+}
+
+.options {
+    width: 75%;
+    flex-wrap: wrap;
+  }
+
+#break-length, #session-length {
+    height: 65px;
+    width: 65px;
+    background: #222;
+    color: #fff;
+    border-radius: 50%;
+    margin: 5px 15px 0 0;
+    opacity: 0.8;
+}
+
+#break-label, #session-label {
+    font-size: 16px;
+    opacity: 0.7;
+}
+
+.adjustment {
+    width: 30px;
+    height: 50px;
+    margin: 5px 0;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 1000;
+}
+
+.fas {
+    opacity: 0.7;
+}
+
+.fas:hover {
+    cursor: pointer;
+    opacity: 1;
 }

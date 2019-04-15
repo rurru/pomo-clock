@@ -4,7 +4,7 @@ import "./Timer.css";
 
 const TimerLabel = (props) => {
     return (
-        <div id = {props.session ? "session-label" : "break-label"}>
+        <div id = "timer-label">
             {props.session ? "Session" : "Break"}
         </div>
     );

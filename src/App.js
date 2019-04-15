@@ -3,6 +3,7 @@ import './App.css';
 import Timer from './Timer.js';
 import TimerLabel from './TimerLabel.js';
 import TimerControl from './TimerControl.js';
+import Options from './Options.js';
 
 class App extends Component {
   constructor(props){
@@ -16,9 +17,23 @@ class App extends Component {
       inSession: true,
       isRunning: false
     }
+  }
+
+  handleChangeLength = (counter, newLength) => {
+    if (counter === "session") {
+      this.setState({sessionLength: newLength});
+    } else {
+      this.setState({breakLength: newLength});
+    }
+  }
+
+  Countdown() {
 
   }
+
   render() {
+    const settingStyle = {padding: '20px 0', height: '210px'};
+    
     return (
       <div className="App">
 
@@ -31,7 +46,11 @@ class App extends Component {
           </div>
         </div>
 
-        <div id = "options" className = "display">
+        <div id = "options" className = "display" style = {settingStyle}>
+          <Options name = "session" value = {this.state.sessionLength}      
+                   changeLength = {this.handleChangeLength} />
+          <Options name = "break" value = {this.state.breakLength} 
+                  changeLength = {this.handleChangeLength} />
         </div>
       </div>
     );
