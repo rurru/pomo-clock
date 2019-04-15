@@ -1,6 +1,6 @@
 import React from 'react';
 
-const MIN = 0;
+const MIN = 1;
 const MAX = 60;
 
 const Options = (props) => {
