@@ -31,13 +31,13 @@ class App extends Component {
 
     if (counter === "session") {
       this.setState({sessionLength: newLength}); 
+      
+      if (!this.state.isRunning && this.state.inSession) {
+        this.setState({minutes: newLength, seconds: 0});
+      } 
     } else {
       this.setState({breakLength: newLength});
     }
-
-    if (!this.state.isRunning) {
-      this.setState({minutes: newLength, seconds: 0});
-    } 
     
   }
 
